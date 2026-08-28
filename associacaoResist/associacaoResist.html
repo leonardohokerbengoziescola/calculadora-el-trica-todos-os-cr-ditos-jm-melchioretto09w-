@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova 02 Eletrônica: Resistência equivalente</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <div class="page">
+
+        <div class="band"><span></span><span></span><span></span><span></span><span></span></div>
+
+        <div class="card">
+            <span class="eyebrow">Associação de resistores</span>
+            <h1>Resistência equivalente</h1>
+            <p class="lede">Informe a quantidade e o valor dos resistores.</p>
+
+            <div class="field">
+                <label for="qtd">Quantidade de resistores</label>
+                <input type="number" id="qtd" min="0" placeholder="Ex: 3" oninput="associResist()">
+            </div>
+
+            <div class="field">
+                <label for="resist">Resistência de cada resistor (Ω)</label>
+                <input type="number" id="resist" placeholder="Ex: 220" oninput="associResist()">
+            </div>
+
+            <div class="field">
+                <label for="associType">Tipo de associação</label>
+                <select name="tipo de associação" id="associType" oninput="associResist()">
+                    <option value="S">Série</option>
+                    <option value="P">Paralelo</option>
+                </select>
+            </div>
+
+            <p id="result" class="readout">Req: 0.00Ω</p>
+
+            <a class="back" href="../index.html">
+                <button>Voltar</button>
+            </a>
+        </div>
+
+    </div>
+
+    <script src="associacaoResist.js"></script>
+</body>
+</html>

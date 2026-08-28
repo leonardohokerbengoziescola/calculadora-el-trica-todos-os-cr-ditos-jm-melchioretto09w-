@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova 02 Eletrônica: Converter unidades elétricas</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <div class="page">
+
+        <div class="band"><span></span><span></span><span></span><span></span><span></span></div>
+
+        <div class="card">
+            <span class="eyebrow">Unidades</span>
+            <h1>Conversão de unidades elétricas</h1>
+            <p class="lede">Escolha a grandeza e os prefixos de entrada e saída.</p>
+
+            <div class="field">
+                <label for="unitP">Unidade plena</label>
+                <select name="unidadePlena" id="unitP" oninput="convertUnit()">
+                    <option value="A">A - ampéres</option>
+                    <option value="Ω">Ω - ohms</option>
+                    <option value="V">V - volts</option>
+                    <option value="W">W - watts</option>
+                    <option value="J">J - joules</option>
+                    <option value="C">C - coulomb</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label for="inputNum">Valor original</label>
+                <input type="number" id="inputNum" placeholder="Insira o valor original" oninput="convertUnit()">
+            </div>
+
+            <div class="field">
+                <label for="prefIn">De</label>
+                <select name="prefixoIn" id="prefIn" oninput="convertUnit()">
+                    <option value="0" id="teraI">TA</option>
+                    <option value="1" id="gigaI">GA</option>
+                    <option value="2" id="megaI">MA</option>
+                    <option value="3" id="kiloI">KA</option>
+                    <option value="4" id="nuloI" selected>A</option>
+                    <option value="5" id="miliI">mA</option>
+                    <option value="6" id="microI">µA</option>
+                    <option value="7" id="nanoI">nA</option>
+                    <option value="8" id="picoI">pA</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label for="prefOut">Para</label>
+                <select name="prefixoOut" id="prefOut" oninput="convertUnit()">
+                    <option value="0" id="teraO">TA</option>
+                    <option value="1" id="gigaO">GA</option>
+                    <option value="2" id="megaO">MA</option>
+                    <option value="3" id="kiloO">KA</option>
+                    <option value="4" id="nuloO" selected>A</option>
+                    <option value="5" id="miliO">mA</option>
+                    <option value="6" id="microO">µA</option>
+                    <option value="7" id="nanoO">nA</option>
+                    <option value="8" id="picoO">pA</option>
+                </select>
+            </div>
+
+            <p id="result" class="readout">Resultado:</p>
+
+            <a class="back" href="../index.html">
+                <button>Voltar</button>
+            </a>
+        </div>
+
+    </div>
+
+    <script src="converterUnidades.js"></script>
+</body>
+</html>

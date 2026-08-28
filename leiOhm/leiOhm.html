@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova 02 Eletrônica: Descobrir grandezas diversas</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <div class="page">
+
+        <div class="band"><span></span><span></span><span></span><span></span><span></span></div>
+
+        <div class="card">
+            <span class="eyebrow">Lei de Ohm</span>
+            <h1>Descubra grandezas diversas</h1>
+            <p class="lede">Escolha a grandeza desconhecida e informe as demais.</p>
+
+            <div class="field">
+                <label for="gndzDesc">Grandeza desconhecida</label>
+                <select name="grandeza desconecida" id="gndzDesc" oninput="leiOhm()">
+                    <option value="U">U - Tensão</option>
+                    <option value="R">R - Resistência</option>
+                    <option value="I">I - Corrente</option>
+                    <option value="P">P - Potência</option>
+                </select>
+            </div>
+
+            <label class="inline">Grandezas conhecidas</label>
+            <div class="field">
+                <input type="number" id="u" placeholder="Insira Tensão" oninput="leiOhm()">
+            </div>
+            <div class="field">
+                <input type="number" id="r" placeholder="Insira Resistência" oninput="leiOhm()">
+            </div>
+            <div class="field">
+                <input type="number" id="i" placeholder="Insira Corrente" oninput="leiOhm()">
+            </div>
+
+            <p id="result" class="readout">U = 0.00V</p>
+
+            <a class="back" href="../index.html">
+                <button>Voltar</button>
+            </a>
+        </div>
+
+    </div>
+
+    <script src="leiOhm.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova 02 Eletrônica: Cálculo de potência gasta por mês</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <div class="page">
+
+        <div class="band"><span></span><span></span><span></span><span></span><span></span></div>
+
+        <div class="card">
+            <span class="eyebrow">Consumo</span>
+            <h1>Gasto energético mensal</h1>
+            <p class="lede">Calcule o consumo (kWh/mês) de um eletrodoméstico.</p>
+
+            <div class="field">
+                <label for="name">Nome do eletrodoméstico</label>
+                <input type="text" id="name" placeholder="Ex: Geladeira" oninput="potenciaCalc()">
+            </div>
+
+            <div class="field">
+                <label for="p">Potência</label>
+                <input type="number" id="p" min="0" placeholder="Insira a potência" oninput="potenciaCalc()">
+            </div>
+
+            <div class="field">
+                <label for="unit">Unidade</label>
+                <select name="unidade" id="unit" oninput="potenciaCalc()">
+                    <option value="0">W</option>
+                    <option value="1">kW</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label for="time">Tempo de uso (h/dia)</label>
+                <input type="number" id="time" min="0" placeholder="Insira o tempo (h/dia) que é usado" oninput="potenciaCalc()">
+            </div>
+
+            <div class="field">
+                <label for="price">Preço por kWh</label>
+                <input type="number" id="price" min="0" placeholder="Insira o preço cobrado por kWh" oninput="potenciaCalc()">
+            </div>
+
+            <p id="resultPower" class="readout">Gasto: 0.00 kWh</p>
+            <p id="resultPrice" class="readout">Custo: R$0.00</p>
+
+            <a class="back" href="../index.html">
+                <button>Voltar</button>
+            </a>
+        </div>
+
+    </div>
+
+    <script src="gastoPotencia.js"></script>
+</body>
+</html>

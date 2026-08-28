@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova 02 Eletrônica: Potência e corrente equivalente</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <div class="page">
+
+        <div class="band"><span></span><span></span><span></span><span></span><span></span></div>
+
+        <div class="card">
+            <span class="eyebrow">Associação de geradores</span>
+            <h1>Potência e corrente equivalente</h1>
+            <p class="lede">Informe a quantidade e os valores dos geradores.</p>
+
+            <div class="field">
+                <label for="qtd">Quantidade de geradores</label>
+                <input type="number" id="qtd" min="0" placeholder="Ex: 2" oninput="associGerar()">
+            </div>
+
+            <div class="field">
+                <label for="tensao">Tensão de cada gerador (V)</label>
+                <input type="number" id="tensao" placeholder="Ex: 12" oninput="associGerar()">
+            </div>
+
+            <div class="field">
+                <label for="corrente">Corrente de cada gerador (A)</label>
+                <input type="number" id="corrente" placeholder="Ex: 1.5" oninput="associGerar()">
+            </div>
+
+            <div class="field">
+                <label for="associType">Tipo de associação</label>
+                <select name="tipo de associação" id="associType" oninput="associGerar()">
+                    <option value="S">Série</option>
+                    <option value="P">Paralelo</option>
+                </select>
+            </div>
+
+            <p id="resultU" class="readout">Ueq: 0.00V</p>
+            <p id="resultI" class="readout">Ieq: 0.00A</p>
+
+            <a class="back" href="../index.html">
+                <button>Voltar</button>
+            </a>
+        </div>
+
+    </div>
+
+    <script src="associacaoGerar.js"></script>
+</body>
+</html>

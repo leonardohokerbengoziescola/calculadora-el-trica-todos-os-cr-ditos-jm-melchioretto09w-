@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova 02 Eletrônica: Reconhecer resistores diversos</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <div class="page">
+
+        <div class="band"><span></span><span></span><span></span><span></span><span></span></div>
+
+        <div class="card">
+            <span class="eyebrow">Código de cores</span>
+            <h1>Reconhecer resistores</h1>
+            <p class="lede">Descubra a resistência a partir das faixas de cor.</p>
+
+            <div class="field">
+                <label for="qtdF">Quantidade de faixas</label>
+                <select name="numero de faixas" id="qtdF" oninput="descobrirResist()">
+                    <option value="5">5</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+
+            <label class="inline">Cores</label>
+
+            <div class="field">
+                <select name="digito1" id="d1" oninput="descobrirResist()">
+                    <option value="0">Preto</option>
+                    <option value="1">Marrom</option>
+                    <option value="2">Vermelho</option>
+                    <option value="3">Laranja</option>
+                    <option value="4">Amarelo</option>
+                    <option value="5">Verde</option>
+                    <option value="6">Azul</option>
+                    <option value="7">Violeta</option>
+                    <option value="8">Cinza</option>
+                    <option value="9">Branco</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <select name="digito2" id="d2" oninput="descobrirResist()">
+                    <option value="0">Preto</option>
+                    <option value="1">Marrom</option>
+                    <option value="2">Vermelho</option>
+                    <option value="3">Laranja</option>
+                    <option value="4">Amarelo</option>
+                    <option value="5">Verde</option>
+                    <option value="6">Azul</option>
+                    <option value="7">Violeta</option>
+                    <option value="8">Cinza</option>
+                    <option value="9">Branco</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <select name="digito3" id="d3" oninput="descobrirResist()">
+                    <option value="0">Preto</option>
+                    <option value="1">Marrom</option>
+                    <option value="2">Vermelho</option>
+                    <option value="3">Laranja</option>
+                    <option value="4">Amarelo</option>
+                    <option value="5">Verde</option>
+                    <option value="6">Azul</option>
+                    <option value="7">Violeta</option>
+                    <option value="8">Cinza</option>
+                    <option value="9">Branco</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label for="m">Múltiplo</label>
+                <select name="multiplo" id="m" oninput="descobrirResist()">
+                    <option value="0">Preto</option>
+                    <option value="1">Marrom</option>
+                    <option value="2">Vermelho</option>
+                    <option value="3">Laranja</option>
+                    <option value="4">Amarelo</option>
+                    <option value="5">Verde</option>
+                    <option value="6">Azul</option>
+                    <option value="7">Violeta</option>
+                    <option value="8">Cinza</option>
+                    <option value="9">Branco</option>
+                    <option value="-1">Ouro</option>
+                    <option value="-2">Prata</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label for="t">Tolerância</label>
+                <select name="tolerancia" id="t" oninput="descobrirResist()">
+                    <option value="1">Marrom</option>
+                    <option value="2">Vermelho</option>
+                    <option value="5">Ouro</option>
+                    <option value="10">Prata</option>
+                    <option value="20">Branco</option>
+                </select>
+            </div>
+
+            <p id="resist" class="readout">Resistência: 0.00Ω</p>
+            <p id="tolera" class="readout">Tolerância: 1% = ±0.00</p>
+
+            <a class="back" href="../index.html">
+                <button>Voltar</button>
+            </a>
+        </div>
+
+    </div>
+
+    <script src="reconhecerResistores.js"></script>
+</body>
+</html>

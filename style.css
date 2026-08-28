@@ -1,0 +1,254 @@
+/* ==========================================================
+   Prova 02 Eletrônica — estilo compartilhado
+   Paleta inspirada em placas de circuito + código de cores
+   de resistores (o próprio assunto das calculadoras).
+   ========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+:root{
+    --bg: #eef2f6;
+    --surface: #ffffff;
+    --surface-alt: #e4eaf1;
+    --text: #1b2a41;
+    --text-dim: #5b6b82;
+    --border: #d3dce6;
+
+    --accent: #c97c2e;      /* cobre / faixa dourada de resistor */
+    --accent-dark: #a8631f;
+    --teal: #2f8f82;        /* trilha de PCB */
+
+    --readout-bg: #16222e;  /* visor tipo multímetro */
+    --readout-text: #f4c86b;
+
+    --radius: 12px;
+    --shadow: 0 1px 2px rgba(27, 42, 65, .06), 0 8px 24px rgba(27, 42, 65, .06);
+}
+
+*{ box-sizing: border-box; }
+
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: var(--bg);
+    background-image:
+        radial-gradient(circle at 1px 1px, rgba(27,42,65,.06) 1px, transparent 0);
+    background-size: 22px 22px;
+    color: var(--text);
+    font-family: 'Inter', system-ui, sans-serif;
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 40px 16px 64px;
+}
+
+h1, h2, h3{
+    font-family: 'Sora', 'Inter', sans-serif;
+    letter-spacing: -.01em;
+    margin: 0 0 6px;
+}
+
+/* ---------- faixa decorativa (código de cores de resistor) ---------- */
+.band{
+    display: flex;
+    width: 96px;
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 0 auto 22px;
+    box-shadow: var(--shadow);
+}
+.band span{ flex: 1; }
+.band span:nth-child(1){ background: #6b4423; } /* marrom */
+.band span:nth-child(2){ background: #d64541; } /* vermelho */
+.band span:nth-child(3){ background: #f0a500; } /* laranja/dourado */
+.band span:nth-child(4){ background: #2f8f82; } /* teal (assinatura) */
+.band span:nth-child(5){ background: #c97c2e; } /* cobre */
+
+/* ---------- layout geral ---------- */
+.page{
+    width: 100%;
+    max-width: 560px;
+}
+
+.eyebrow{
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .72rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--teal);
+    background: rgba(47,143,130,.1);
+    padding: 4px 10px;
+    border-radius: 999px;
+    margin-bottom: 10px;
+}
+
+.card{
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 32px 28px;
+}
+
+.lede{
+    color: var(--text-dim);
+    margin: 0 0 24px;
+    font-size: .95rem;
+}
+
+/* ---------- campos de formulário ---------- */
+.field{
+    margin-bottom: 16px;
+}
+
+.field label{
+    display: block;
+    font-size: .8rem;
+    font-weight: 600;
+    color: var(--text-dim);
+    margin-bottom: 6px;
+}
+
+input[type="number"],
+input[type="text"],
+select{
+    width: 100%;
+    font: inherit;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .95rem;
+    color: var(--text);
+    background: var(--surface);
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    padding: 11px 12px;
+    transition: border-color .15s ease, box-shadow .15s ease;
+    appearance: none;
+}
+
+select{
+    background-image: linear-gradient(45deg, transparent 50%, var(--text-dim) 50%),
+                       linear-gradient(135deg, var(--text-dim) 50%, transparent 50%);
+    background-position: calc(100% - 18px) center, calc(100% - 13px) center;
+    background-size: 5px 5px, 5px 5px;
+    background-repeat: no-repeat;
+    padding-right: 32px;
+}
+
+input:hover, select:hover{ border-color: var(--accent); }
+
+input:focus, select:focus{
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(201,124,46,.18);
+}
+
+input::placeholder{ color: #9aa8ba; font-family: 'Inter', sans-serif; }
+
+label.inline{
+    display: block;
+    font-size: .8rem;
+    font-weight: 600;
+    color: var(--text-dim);
+    margin: 18px 0 8px;
+}
+
+/* ---------- visor de resultado (estilo multímetro) ---------- */
+.readout{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--readout-text);
+    background: var(--readout-bg);
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin: 22px 0 0;
+    letter-spacing: .02em;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,.04);
+}
+.readout + .readout{ margin-top: 10px; }
+
+/* ---------- botões / voltar ---------- */
+button{
+    font: inherit;
+    font-weight: 600;
+    font-size: .9rem;
+    color: #fff;
+    background: var(--accent);
+    border: none;
+    border-radius: 8px;
+    padding: 11px 18px;
+    cursor: pointer;
+    transition: background .15s ease, transform .1s ease;
+}
+button:hover{ background: var(--accent-dark); }
+button:active{ transform: translateY(1px); }
+
+a{ text-decoration: none; }
+
+.back{
+    display: inline-block;
+    margin-top: 26px;
+}
+.back button{
+    background: transparent;
+    color: var(--text-dim);
+    border: 1.5px solid var(--border);
+}
+.back button:hover{
+    color: var(--text);
+    border-color: var(--text-dim);
+    background: var(--surface-alt);
+}
+
+/* ---------- página inicial (menu) ---------- */
+.hero{
+    text-align: center;
+    margin-bottom: 28px;
+}
+.hero h1{ font-size: 1.6rem; }
+.hero p{ color: var(--text-dim); margin: 0; }
+
+.menu{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+@media (max-width: 480px){
+    .menu{ grid-template-columns: 1fr; }
+}
+
+.menu a{ display: block; }
+
+.menu-item{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 100%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
+    color: var(--text);
+    font-family: 'Sora', sans-serif;
+    font-weight: 600;
+    font-size: .92rem;
+    box-shadow: var(--shadow);
+    transition: transform .12s ease, border-color .12s ease;
+}
+.menu-item:hover{
+    transform: translateY(-2px);
+    border-color: var(--accent);
+}
+.menu-item .dot{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--teal);
+    flex-shrink: 0;
+}
